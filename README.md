@@ -43,24 +43,17 @@ By the end of class, students will be able to:
 | Number        | Activity      | Time  |
 | ------------- |:-------------:| -----:|
 | 1             | Intro: Instructor Do                                |    0:05|
-| 2             | Everyone Do: <br>Curiosity Stoke                  |   0:10 |
-| 3             | Instructor Do: <br>Warm Up Activity                   |   0:10 |
-| 4             | Instructor Do:  <br>Setting Up Functions            |   0:05 |
-| 5             | Instructor Do:  <br>Defining the Closure Scope Chain|   0:05 |
-| 6             | Instructor Do:  <br> Lexical Scoping                |   0:05 |
-| 7             | Students Do: <br>  Assessing Parameters             |   0:15 |
-| 8             | Students Do: <br>  Reusable Functions               |   0:15 |
-| 9             | Everyone Do: <br> Review Reusable Functions         |   0:10 |   
-| 11            | Everyone Do: <br> Review Calculator  Activity       |   0:10 |
-| 12            | Everyone Do: <br> Review Assessing Parameters       |   0:10 |
-| 13            | Instructor Do:  <br> Lexical Scoping                |   0:05 |
-| 14            | Students Do: <br>  Assessing Parameters             |   0:15 |
-| 15            | Students Do: <br>  Reusable Functions               |   0:15 |
-| 16            | Everyone Do: <br> Review Calculator  Activity       |   0:10 |
-| 17            | Everyone Do: <br> Review Assessing Parameters       |   0:10 |
-| 18            | Students Do: <br>  Reusable Functions               |   0:15 |
-| 19            | Everyone Do: <br> Review Calculator  Activity       |   0:10 |
-| 20            | Everyone Do: <br> Review Assessing Parameters       |   0:10 |
+| 2             | Everyone Do: <br>Curiosity Stoke                    |   0:10 |
+| 3             | Instructor Do: <br>  Closure Scope Chain            |   0:10 |
+| 4             | Instructor Do:  <br> Call Stack Execution & The Console     |   0:05 |
+| 5             | Instructor Do:  <br> Closures in Loops              |   0:05 |
+| 6             | Students Do:  <br> Creating & Working With Closures |   0:05 |
+| 7             | Students Do: <br>  Closures & Invocation             |   0:15 |
+| 8             | Students Do: <br>  Closures & Loops               |   0:15 |
+| 9             | Everyone Do: <br> Review Creating Closures         |   0:10 |   
+| 10            | Everyone Do: <br> Review Closures in Loops       |   0:10 |
+| 11            | Everyone Do: <br> Review Call Stack Execution & IIFE       |   0:10 |
+| 12            | Instructor Do:  <br> Lexical Scoping                |   0:05 |
 
 - - -
 
@@ -196,7 +189,7 @@ for (var index = 1; index <= 3; index++) {
         console.log('after ' + index + ' second(s):' + index);
     }, index * 1000);
 }
-}
+
 // what is the expected output of the console log inside of the callback in the setTimeOut method?
 
 ```
@@ -208,11 +201,9 @@ for (var index = 1; index <= 3; index++) {
 
   * Slack out the solution when finished.
 
-  * Explain that the callback function passed to the setTimeout() is a closure. It remembers the value of i from the last iteration of the loop, which is 4.
+  * Explain that the callback function passed to the setTimeout() is a closure. It remembers the value of index from the last iteration of the loop, which is 4.
   
-  * Reiterate that all three closures created by the for-loop share the same global scope access the same value of index.
-
-
+  * Reiterate that all three closures created by the for-loop share the same global scope to access the value of the index.
 
 ### 6. Students Do: Creating & Working With Closures (15 mins)
 #### TAs DO: 

@@ -47,13 +47,13 @@ By the end of class, students will be able to:
 | 3             | Instructor Do: <br>  Closure Scope Chain            |   0:10 |
 | 4             | Instructor Do:  <br> Call Stack Execution & The Console     |   0:05 |
 | 5             | Instructor Do:  <br> Closures in Loops              |   0:05 |
-| 6             | Students Do:  <br> Creating & Working With Closures |   0:05 |
+| 6             | Students Do:  <br> Creating & Working With Closures |   0:15 |
 | 7             | Students Do: <br>  Closures & Invocation             |   0:15 |
 | 8             | Students Do: <br>  Closures & Loops               |   0:15 |
 | 9             | Everyone Do: <br> Review Creating Closures         |   0:10 |   
 | 10            | Everyone Do: <br> Review Closures in Loops       |   0:10 |
 | 11            | Everyone Do: <br> Review Call Stack Execution & IIFE       |   0:10 |
-| 12            | Instructor Do:  <br> Lexical Scoping                |   0:05 |
+| 12            | Instructor Do:  <br> Considerations for Function Performance              |   0:05 |
 
 - - -
 
@@ -183,10 +183,11 @@ console.log(schooling('8')); // "I've worked as a grad student for 8 years."
 
 * Share the following code:
 ```js
-for (var index = 1; index <= 3; index++) {
+for (var i = 1; i <= 3; i++) {
   //this for loop executes the code 3 times
     setTimeout(function () {
-        console.log('after ' + index + ' second(s):' + index);
+      // the value of index is captured at the last execution of valuation of index in the for loop
+        console.log('after ' + i + ' second(s):' + i);
     }, index * 1000);
 }
 
@@ -197,13 +198,19 @@ for (var index = 1; index <= 3; index++) {
 
     * Assess the above code with students line by line. 
 
-    * Before running the above code in the console, ask students what the expected output will be of `index` in the setTimeout() method.
+    * Before running the above code in the console, ask students what the expected output will be of `i` in the setTimeout() method.
 
-  * Slack out the solution when finished.
+    * If needed, review and research the basic usage of the setTimeout() method for an understanding of how the code will be executed. 
 
+#### Students Do: 
+  * Slackout resource on the setTimeOut() method found in the resources link below. 
+
+#### Instructor Do: 
   * Explain that the callback function passed to the setTimeout() is a closure. It remembers the value of index from the last iteration of the loop, which is 4.
   
   * Reiterate that all three closures created by the for-loop share the same global scope to access the value of the index.
+
+  * Make note of how this code would be refactored using the `let` keyword, and principles of `IIFE` which will be reviewed toward the end of the class. 
 
 ### 6. Students Do: Creating & Working With Closures (15 mins)
 #### TAs DO: 
@@ -221,22 +228,31 @@ for (var index = 1; index <= 3; index++) {
 
 
 ### 7. Students Do: Closures & Invocation (15 mins)
-* [Closures Activity 2](https://bit.ly/3kGIKhs)
-* Continue through 
- * With a partner, spend a few moments reading the code sent to you.
 
-    * Try to explain each line of code.
-
-    * Feel free to do research if you are stumped. 
+* **Instructions**
+    * With a partner, create a function from scratch `multiplyByTwo()` that receives a single argument and returns the result of the number multiplied by 2
+    * Use this CodePen to view an approach to solving this actvity [Closures Activity 2](https://bit.ly/3kGIKhs)  
  
 ### 8. Students Do: Closures & Loops (15 mins)
-* [Closures Activity 3](https://bit.ly/3eatXZZ)
-
-* To fix this issue, you need to create a new closure scope in each iteration of the loop.
 
   * **Instructions**
+    * Assess the code at [Closures Activity 3](https://bit.ly/3eatXZZ)
+    
+    * Each call to the console.log occurs after the loop has finished, such that the value of i has changed before the console.log executes. 
 
-    * Examine the for loop 
+    * To fix the issue of the instance of the index holding the same value, refactor this for loop to properly that creates a new closure scope in each iteration of the loop.
+
+    * The desired output should look like the following: 
+
+    ```js 
+      /* console.log(i) should output
+      0 second after call - log 0
+      1 seconds after call - log 1
+      2 seconds after call - log 2
+      3 seconds after call - log 3
+      4 seconds after call - log 4
+      5 seconds after call - log 5 */
+    ```
 
     * If you need help, use the code from the previous example as a guide.
 
@@ -251,16 +267,60 @@ for (var index = 1; index <= 3; index++) {
 
 ### 10. Everyone Do: Review Closures in Loops (Optional) (10 mins)
 
+* Using an immediately invoked function expression ( or `IIFE`) creates a new scope by declaring a function and immediately executing it.
 
-### 11. Everyone Do: Review Call Stack Execution & IIFE (10 mins)
+* Review the refactored code that now passes and instance of index to the function expression.
+```js
+function timeOutCounter() {
+  for (var i = 0; i <= 5; i++) {
+    /* Wrapping the child function expression with an instance of `i` passed to the function reevaluatees the scope of the function after execution in the loop.*/
+(function(i){
+    setTimeout(function() {
+    	console.log(i)
+	}, i * 1000);
+})(i)
 
-* Review the activity and Slacked out solution.
+  }
+}
+  
+timeOutCounter();
+
+```
+
+### 11. Everyone Do: Review Call Stack Execution & IIFE, Cont. (10 mins)
+
+* Continue to assess the for loop, make sure to answer student questions as they come on how the for loop is being executed. 
+
+```js
+function timeCounter() {
+  for (let i = 0; i <= 5; i++) {
+    /* This for loop will iterate as long as i is less than or equal
+to 5. Use closure that preserves a reference to i at the time of execution.*/
+
+    setTimeout(function() {
+    	console.log(i)
+	}, i * 1000)
+  }
+}
+timeCounter();
+
+```
+
+* Explain a new use of declaring the variable using ES6 and the `let` keyword to declare a variable that is block-scoped.
+
+* The `let` keyword in the for loop creates a new lexical scope in each iteration, which will give you a new index variable in each iteration.
+
+* The new lexical scope of the for loop follows the chain from the previous scope so that the previous value of the index is copied to the new one.
 
 ### 12. Instructor Do: Callbacks Performance Considerations  (10 mins) (Critical)
 
 * Assess the code below and walk students through the solution. Comments in the code will help guide your conversation on the activity. 
 
+* Emphasize to students that it's unnecessary to create functions within other functions if closures are not needed for a particular task. 
 
+* Returning functions from functions affects script performance via processing speed and memory consumption.
+
+* Review the previous activities and refactor the code to compare the utility of using closures 
 
 ## Additional Resources 
 * [Javascript Closures Moz Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)

@@ -11,7 +11,7 @@ The following lesson plan consists of 9 activities that introduce students to ja
 
 * In today's class you will cover javascript closures. 
 
-* This lesson assumes student's knowledge with creating regular or factory functions (declarations and expressions), basic understanding of for loops, as well as a basic understanding of assigning values with let, var and const. 
+* This lesson assumes student's knowledge with creating regular or factory functions (declarations and expressions), basic understanding of for loops, as well as a basic usage of the let keyword in for loops. 
 
 
 * Stoking curiosity alerts are signals to the instructional staff to engage with students' thoughts and questions. 

@@ -14,11 +14,8 @@ The following lesson plan consists of 9 activities that introduce students to ja
 * This lesson assumes student's knowledge with creating regular or factory functions (declarations and expressions), basic understanding of for loops, as well as a basic understanding of assigning values with let, var and const. 
 
 
-* Stoking curiosity alerts are signals to the instructional staff to engage with 
+* Stoking curiosity alerts are signals to the instructional staff to engage with students' thoughts and questions. 
 
-* Real-world problem alert are signals to the instructional staff that the following activity or code can be applied to an actual business need.
-
-* Instructor considerations: show students the solutions to these activities in live demos, and then Slack them the answers. BE SURE to leave around 1 hour of class time for students to work on the rock-paper-scissors activity. This activity is extremely important, and it's a close match to their homework assignment.
 
 * Students should be given a substantial amount of time to work on the activities. Student should feel comfortable with _the unknown_. Reveal bits of the code for students, but the desired outcome is that students feel comfortable independently developing their own code. 
 
@@ -32,8 +29,7 @@ By the end of class, students will be able to:
 
 * Demonstrate how to effectively use function closures. 
 
-
-* Construct closures and apply them to real use-cases.
+* Construct closures and apply them to loops.
 
 * Classify the appropriate time to utilize closures. 
 

@@ -196,7 +196,7 @@ for (var i = 1; i <= 3; i++) {
 
     * Before running the above code in the console, ask students what the expected output will be of `i` in the setTimeout() method.
 
-    * If needed, review and research the basic usage of the setTimeout() method for an understanding of how the code will be executed. 
+    * If needed, review and research the basic usage of the setTimeout() method for an understanding of how the code will be executed. Use links below.
 
 #### Students Do: 
   * Slackout resource on the setTimeOut() method found in the resources link below. 

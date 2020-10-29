@@ -236,7 +236,21 @@ for (var i = 1; i <= 3; i++) {
 ### 8. Students Do: Closures & Loops (15 mins)
 
   * **Instructions**
-    * Assess the code at [Closures Activity 3](https://bit.ly/3eatXZZ)
+      ```js
+        function timeCounter() {
+          for (let i = 0; i <= 5; i++) {
+            /* This for loop will iterate as long as i is less than or equal
+        to 5. Use closure that preserves a reference to i at the time of execution.*/
+
+            setTimeout(function() {
+              console.log(i)
+          }, i * 1000)
+          }
+        }
+        timeCounter();
+
+    ```
+    * Assess the code above and what can be found at [Closures Activity 3](https://bit.ly/3eatXZZ)
     
     * Each call to the console.log occurs after the loop has finished, such that the value of i has changed before the console.log executes. 
 

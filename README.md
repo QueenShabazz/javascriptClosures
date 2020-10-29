@@ -53,7 +53,7 @@ By the end of class, students will be able to:
 | 9             | Everyone Do: <br> Review Creating Closures         |   0:10 |   
 | 10            | Everyone Do: <br> Review Closures in Loops       |   0:10 |
 | 11            | Everyone Do: <br> Review Call Stack Execution & IIFE       |   0:10 |
-| 12            | Instructor Do:  <br> Considerations for Function Performance              |   0:05 |
+| 12            | Instructor Do:  <br> Considerations for Function Performance              |   0:10 |
 
 - - -
 
